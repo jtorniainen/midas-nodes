@@ -224,7 +224,7 @@ class MyoRaw(object):
         stream_info = lsl.StreamInfo(name='Myo',
                                      type='EMG',
                                      channel_count=8,
-                                     nominal_srate=200,
+                                     nominal_srate=50,
                                      channel_format='float32',
                                      source_id='myoblue')
         self.outlet = lsl.StreamOutlet(stream_info)
@@ -295,7 +295,6 @@ class MyoRaw(object):
                 # around or something
                 emg = vals[:8]
                 moving = vals[8]
-                # Can we just push here?
                 self.on_emg(emg, moving)
             elif attr == 0x1c:
                 vals = unpack('10h', pay)

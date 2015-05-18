@@ -14,10 +14,10 @@ def list_streams():
     streams = lsl.resolve_streams()
     print("\nAvailable streams:")
     for stream in streams:
-        print("\t%s(%s)@%s [%dHz]" % (stream.name(),
-                                      stream.type(),
-                                      stream.hostname(),
-                                      stream.nominal_srate()))
+        print("  %s(%s)@%s[%dHz]" % (stream.name(),
+                                     stream.type(),
+                                     stream.hostname(),
+                                     stream.nominal_srate()))
 
 
 def plot(stream_name=None, win=200):
